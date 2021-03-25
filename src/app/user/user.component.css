@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+}
+
+td, th {
+    width: 19%;
+}
+
+button{
+    display: inline-block;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}

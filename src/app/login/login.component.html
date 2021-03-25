@@ -1,0 +1,70 @@
+<head>
+    <title>Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- <div id="loginComponent">
+
+
+        <div *ngIf="!loginStatus">
+            <form>
+                Username:<input type="text" [(ngModel)]="username" name="username" #t1><br>
+                Password:<input type="password" [(ngModel)]="password" name="password"><br>
+                <input type="susbmit" value="Login" (click)="CheckLogin(t1)"><br>
+
+            </form>
+        </div>
+
+
+        <div *ngIf="loginStatus">
+            <form>
+                <p>{{msg}}</p>
+                <input type="submit" value="Logout" (click)="Logout()"><br>
+                <a routerLink="/">Start Shopping</a><br>
+            </form>
+        </div>
+
+
+        <div id="loginPageLink">
+            <a routerLink="/register">Back to Register</a><br>
+            <a routerLink="/">Back to Home</a>
+        </div>
+    </div> -->
+<div class="bg-image">
+    <table>
+        <tr>
+            <td>
+                <div >
+                    <!-- <img src="makeup.jpeg" class="rounded" alt="Broken Image" width="304" height="236">  -->
+                </div>
+                <div *ngIf="!loginStatusService.isLoggedIn" class="bg-text">
+                    <form>
+                        <h4>Login Page</h4>
+                        <label for="">UserID:</label>
+                        <input type="text" [(ngModel)]="uid" name="uid" #t1><br>
+                        <label for="">Password:</label>
+                        <input type="password" [(ngModel)]="password" name="password"><br>
+                        <button (click)="CheckLogin(t1)">Login</button>
+                        <div>{{msg}}</div>
+                    </form>
+                </div>
+                {{uid}}
+                {{password}}
+                <div *ngIf="loginStatusService.isLoggedIn">
+                    <form>
+                        <input type="submit" value="Logout" (click)="Logout()"><br>
+                    </form>
+                
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+    
+</body>

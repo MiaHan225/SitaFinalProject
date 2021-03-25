@@ -1,0 +1,64 @@
+<div class="bg-image">
+    <form [formGroup]="myform">
+        <h4>Register Page</h4>
+
+        <div>Fisrt Name:</div>
+
+        <input type="text" class="wide-box" formControlName="firstname"><br>
+
+        <span class="error" *ngIf="myform.controls.firstname.touched && myform.controls.firstname.invalid && (myform.controls.firstname.errors &&myform.controls.firstname.errors.required)">First name can not be blank</span>
+        <span class="error" *ngIf="myform.controls.firstname.touched && myform.controls.firstname.invalid && (myform.controls.firstname.errors &&myform.controls.firstname.errors.minlength)">Min :3 Characters</span>
+        <span class="error" *ngIf="myform.controls.firstname.touched && myform.controls.firstname.invalid && (myform.controls.firstname.errors &&myform.controls.firstname.errors.pattern)">Alphabets only</span><br>
+    
+        <div>Last Name:</div>
+        <input type="text" class="wide-box" formControlName="lastname"><br>
+
+        <span class="error" *ngIf="myform.controls.lastname.touched && myform.controls.lastname.invalid && (myform.controls.lastname.errors &&myform.controls.lastname.errors.required)">Last name can not be blank</span>
+        <span class="error" *ngIf="myform.controls.lastname.touched && myform.controls.lastname.invalid && (myform.controls.lastname.errors &&myform.controls.lastname.errors.minlength)">Min :3 Characters</span>
+        <span class="error" *ngIf="myform.controls.lastname.touched && myform.controls.lastname.invalid && (myform.controls.lastname.errors &&myform.controls.lastname.errors.pattern)">Alphabets only</span><br>
+    
+        <div>Email:</div>
+        <input type="email" class="wide-box" formControlName="email"><br>
+
+        <span class="error" *ngIf="myform.controls.email.touched && myform.controls.email.invalid && (myform.controls.email.errors &&myform.controls.email.errors.required)">Email can not be blank</span>
+        <span class="error" *ngIf="myform.controls.email.touched && myform.controls.email.invalid && (myform.controls.email.errors &&myform.controls.email.errors.pattern)">Email not valid</span><br>
+    
+        <div>Passowrd:</div>
+        <input type="password" class="wide-box" formControlName="password"><br>
+
+        <span class="error" *ngIf="myform.controls.password.touched && myform.controls.password.invalid && (myform.controls.password.errors &&myform.controls.password.errors.required)">password can not be blank</span>
+        <span class="error" *ngIf="myform.controls.password.touched && myform.controls.password.invalid && (myform.controls.password.errors &&myform.controls.password.errors.pattern)">Passwords: 6 to 15 characters; at least one upper case letter, one lower case letter and one digit </span><br>
+    
+        <div>Phone:</div>
+        <input type="phone" class="wide-box" formControlName="phone"><br>
+
+        <span class="error" *ngIf="myform.controls.phone.touched && myform.controls.phone.invalid && (myform.controls.phone.errors &&myform.controls.phone.errors.required)">phone can not be blank</span>
+        <span class="error" *ngIf="myform.controls.phone.touched && myform.controls.phone.invalid && (myform.controls.phone.errors &&myform.controls.phone.errors.pattern)">Phone number not valid</span><br>
+    
+        <div>Gender:</div>
+        <input type="radio" id="male" name="gender" value="male" formControlName="gender">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" formControlName="gender">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" formControlName="gender">
+        <label for="other">Other</label> <br>
+        <span class="error" *ngIf="myform.controls.gender.touched && myform.controls.gender.invalid && (myform.controls.gender.errors &&myform.controls.gender.errors.required)">Please select gender</span><br>
+
+        <div>Date of Birth:</div>
+        <input type="date" class="wide-box" formControlName="dob"><br>
+        <span class="error" *ngIf="myform.controls.gender.touched && myform.controls.gender.invalid && (myform.controls.gender.errors &&myform.controls.gender.errors.required)">Please select a birthdate</span><br>
+
+        <input type="submit" value="Sign up" (click)="PostData()">
+
+        <div>{{msg}}</div>
+        <div>{{msg2}}</div>
+        <div>
+            <a routerLink="/login">Already a Member?</a><br>
+            <!-- <router-outlet></router-outlet> -->
+        </div>
+    </form>
+    
+       
+</div>
+
+
